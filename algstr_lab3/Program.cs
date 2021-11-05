@@ -9,16 +9,17 @@ namespace algstr_lab3
         {
             var tree = new AvlTree();
 
-            tree.Insert(1);
-            tree.Insert(2);
-            tree.Insert(3);
-            tree.Insert(4);
-            tree.Insert(5);
-            tree.Insert(6);
+            var n = 30;
+            for (var i = 0; i < n; ++i)
+            {
+                tree.Insert(i);
+            }
             
-            Console.WriteLine("\nelements (" + tree.Count  + ")");
-            AvlTreePrinter.Print(tree.Root);
-            Console.WriteLine("\nnigga");
+            //tree.Delete(4);
+            //tree.Delete(2);
+
+            Console.WriteLine("elements (" + tree.Count  + ")");
+            AvlTreePrinter.PrintPretty(tree.Root);
         }
     }
 }
