@@ -9,8 +9,8 @@ namespace algstr_lab3
         {
             var tree = new AvlTree();
 
-            var n = 30;
-            for (var i = 0; i < n; ++i)
+            var n = 10;
+            for (var i = 1; i <= n; ++i)
             {
                 tree.Insert(i);
             }
@@ -20,6 +20,36 @@ namespace algstr_lab3
 
             Console.WriteLine("elements (" + tree.Count  + ")");
             AvlTreePrinter.PrintPretty(tree.Root);
+
+            Console.Write("клп: ");
+            foreach (var el in AvlTreeTraversal.IterativePreOrder(tree.Root!))
+            {
+                Console.Write(el + " ");
+            }
+            Console.WriteLine();
+
+            Console.Write("лкп: ");
+            foreach (var el in AvlTreeTraversal.IterativeInOrder(tree.Root!))
+            {
+                Console.Write(el + " ");
+            }
+            Console.WriteLine();
+
+            Console.Write("лпк: ");
+            foreach (var el in AvlTreeTraversal.IterativePostOrder(tree.Root!))
+            {
+                Console.Write(el + " ");
+            }
+            Console.WriteLine();
+
+            Console.Write("в глубину: ");
+            foreach (var el in AvlTreeTraversal.BreadthFirst(tree.Root!))
+            {
+                Console.Write(el + " ");
+            }
+            Console.WriteLine();
+            
+            
         }
     }
 }
