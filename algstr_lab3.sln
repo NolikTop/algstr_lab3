@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "algstr_lab3", "algstr_lab3\algstr_lab3.csproj", "{F2395110-0152-47C9-9B83-5A71BB4C123E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "console", "console\console.csproj", "{F2395110-0152-47C9-9B83-5A71BB4C123E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "src\src.csproj", "{3D04477C-45AD-4C79-A63E-02372E7BE1FA}"
 EndProject

@@ -7,12 +7,15 @@ namespace algstr_lab3
     {
         static void Main(string[] args)
         {
-            var tree = new AvlTree();
-
             var n = 10;
-            for (var i = 1; i <= n; ++i)
+
+            var tree = new AvlTree();
+            var array = new int[n];
+
+            for (var i = 0; i < n; ++i)
             {
                 tree.Insert(i);
+                array[i] = i;
             }
             
             //tree.Delete(4);
@@ -44,6 +47,13 @@ namespace algstr_lab3
 
             Console.Write("в глубину: ");
             foreach (var el in AvlTreeTraversal.BreadthFirst(tree.Root!))
+            {
+                Console.Write(el + " ");
+            }
+            Console.WriteLine();
+
+            Console.Write("отсортировано: ");
+            foreach (var el in AvlTreeTraversal.Sort(array))
             {
                 Console.Write(el + " ");
             }

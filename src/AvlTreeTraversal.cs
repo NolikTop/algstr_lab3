@@ -83,18 +83,16 @@ namespace src
         public static IEnumerable<int> BreadthFirst(AvlTreeElement root)
         {
             var h = root.Height + 1;
-            Console.WriteLine("height: " + h);
-            int i;
             var result = new DynamicArray<int>();
 
-            for (i = 1; i <= h; i++) {
-                PrintCurrentLevel(root, i, result);
+            for (var i = 1; i <= h; i++) {
+                AddLevel(root, i, result);
             }
 
             return result;
         }
         
-        private static void PrintCurrentLevel(AvlTreeElement? el, int level, DynamicArray<int> result)
+        private static void AddLevel(AvlTreeElement? el, int level, ICollection<int> result)
         {
             if (el is null)
             {
@@ -107,8 +105,8 @@ namespace src
                     result.Add(el.Key);
                     break;
                 case > 1:
-                    PrintCurrentLevel(el.Left, level - 1, result);
-                    PrintCurrentLevel(el.Right, level - 1, result);
+                    AddLevel(el.Left, level - 1, result);
+                    AddLevel(el.Right, level - 1, result);
                     break;
             }
         }
